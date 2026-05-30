@@ -5,7 +5,7 @@ import {
 } from "react";
 import ReactMarkdown from "react-markdown";
 
-const backend = import.meta.env.BACKEND_AGENT_URL;
+const backend = import.meta.env.VITE_BACKEND_AGENT_URL;
 
 export default function App() {
   const [input, setInput] = useState("");
