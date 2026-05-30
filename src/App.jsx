@@ -5,6 +5,8 @@ import {
 } from "react";
 import ReactMarkdown from "react-markdown";
 
+const backend = import.meta.env.BACKEND_AGENT_URL;
+
 export default function App() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -85,9 +87,8 @@ export default function App() {
 
     setInput("");
     setLoading(true);
-
     try {
-      const response = await fetch("https://ai-agent-7ydn.onrender.com/", {
+      const response = await fetch(`${backend}`), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
