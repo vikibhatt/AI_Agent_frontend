@@ -85,6 +85,16 @@ export default function App() {
 
     const currentInput = input;
 
+    const userchatMessage = {
+      role: "user",
+      content: currentInput,
+    };
+
+    const updatedchatMessages = [
+      ...activeChat.messages,
+      userchatMessage,
+    ];
+
     setInput("");
     setLoading(true);
     try {
@@ -94,7 +104,7 @@ export default function App() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          message: currentInput,
+          messages: updatedchatMessages,
         }),
       });
 
