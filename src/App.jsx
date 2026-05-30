@@ -88,7 +88,7 @@ export default function App() {
     setInput("");
     setLoading(true);
     try {
-      const response = await fetch(`${backend}`), {
+      const response = await fetch(backend, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
