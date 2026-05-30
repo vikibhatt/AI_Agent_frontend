@@ -135,7 +135,7 @@ export default function App() {
   return (
     <div className="h-screen bg-[#212121] text-white flex overflow-hidden">
       {/* Sidebar */}
-      <aside className="w-72 bg-[#171717] border-r border-gray-800 flex flex-col">
+      <aside className="hidden md:flex w-72 bg-[#171717] border-r border-gray-800 flex-col">
         <div className="p-4 border-b border-gray-800">
           <button
             onClick={handleNewChat}
@@ -188,10 +188,10 @@ export default function App() {
       </aside>
 
       {/* Main */}
-      <main className="flex-1 flex flex-col">
+      <main className="w-full flex flex-col">
         {/* Header */}
         <header className="h-16 border-b border-gray-800 flex items-center px-6 justify-between">
-          <h1 className="text-lg font-semibold">
+          <h1 className="text-xl md:text-5xl font-semibold truncate">
             AI Agent
           </h1>
 
@@ -234,7 +234,7 @@ export default function App() {
 
                   {/* Bubble */}
                   <div
-                    className={`rounded-2xl px-6 py-5 max-w-3xl overflow-x-auto ${
+                    className={`rounded-2xl px-6 py-5 max-w-[85%] md:max-w-3xl overflow-x-auto ${
                       message.role === "user"
                         ? "bg-[#0b5cff] text-white"
                         : "bg-[#2a2a2a] text-gray-200"
@@ -321,10 +321,10 @@ export default function App() {
 
         {/* Input */}
         <div className="border-t border-gray-800 p-5">
-          <div className="max-w-4xl mx-auto bg-[#2a2a2a] rounded-3xl px-5 py-4 flex items-end gap-4">
+          <div className="max-w-4xl mx-auto bg-[#2a2a2a] rounded-3xl px-4 py-3 md:px-5 md:py-4 flex items-end gap-3 md:gap-4">
             <textarea
               placeholder="Message AI Agent..."
-              rows={1}
+              rows={2}
               value={input}
               onChange={(e) =>
                 setInput(e.target.value)
